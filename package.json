@@ -1,0 +1,37 @@
+{
+  "name": "typescript-nodejs-template",
+  "version": "1.0.0",
+  "description": "A simple template for typescript Node.js project",
+  "main": "index.js",
+  "scripts": {
+    "start": "yarn serve",
+    "build": "yarn build-ts",
+    "serve": "node dist/index.js",
+    "watch-node": "nodemon dist/index.js",
+    "watch": "tsc && concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "test": "NODE_ENV=test jest --detectOpenHandles"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.2.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@types/concurrently": "^5.2.1",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.31",
+    "@types/node-fetch": "^2.5.4",
+    "concurrently": "^5.0.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.4",
+    "ts-jest": "^26.5.2",
+    "ts-node": "^10.0.0",
+    "tslint": "^6.1.3"
+  }
+}
